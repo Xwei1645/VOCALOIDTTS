@@ -4,12 +4,13 @@ from time import sleep
 import pyaudio
 import wave
 
+version = 0.2
+
 word_list = []
 data= []
 cmd = 0
 word = 0
-helpurl = "https://www.bilibili.com/read/cv16155309"
-outfile = "output.wav"
+helpurl = "https://github.com/Xwei1645/VOCALOIDTTS"
 
 def playwav(wav):
     CHUNK = 1024
@@ -54,14 +55,15 @@ while True:
                 word = 0
             
     if cmd == "about":
-        print("更新说明：")
-        print("1.使用“play”暂时替代“done”,输入“play”时会按序播放wav，请用内录软件录制")
+        print("使用说明：")
+        print("输入“play”时会按序播放wav，请用内录软件录制")
+        print("闪退出现说明出现了错误，如找不到wav文件")
         print("********************")
         print("*   VOCALOIDTTS    *")
-        print("*  ver.0.2-220416  *")
+        print("*       v0.2       *")
         print("* Created by Xwei  *")
         print("*  uid:573734644   *")
         print("********************")
     if cmd == "help":
-        if input("即将打开帮助专栏，输入y确认：") == "y":
+        if input("即将打开Github，输入y确认：") == "y":
             webbrowser.open(helpurl, new=0, autoraise=True)
